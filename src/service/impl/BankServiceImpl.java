@@ -35,7 +35,7 @@ public class BankServiceImpl implements BankService {
     };
 
     private final Validation<String> validateType = type -> {
-        if (type == null || type.isBlank() || !type.equalsIgnoreCase("SAVINGS") || !type.equalsIgnoreCase("CURRENT"))
+        if (type == null || type.isBlank() || (!type.equalsIgnoreCase("SAVINGS") && !type.equalsIgnoreCase("CURRENT")))
             throw new ValidationException("Type must be SAVINGS/CURRENT");
     };
 
